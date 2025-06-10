@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medical Imaging Expert AI</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Medical Imaging Expert AI</h1>
+            <p>Upload a medical image for AI-powered analysis</p>
+        </header>
+
+        <main>
+            <div class="upload-section">
+                <div class="upload-area" id="dropZone">
+                    <input type="file" id="fileInput" accept="image/*" hidden>
+                    <div class="upload-content">
+                        <img src="upload-icon.svg" alt="Upload" id="uploadIcon">
+                        <p>Drag & drop your medical image here or</p>
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+                <div class="preview-container" id="previewContainer" hidden>
+                    <img id="imagePreview" alt="Preview">
+                    <button class="remove-btn" onclick="removeImage()">Remove</button>
+                </div>
+            </div>
+
+            <div class="analysis-section" id="analysisSection" hidden>
+                <h2>Analysis Results</h2>
+                <div class="loading" id="loadingIndicator" hidden>
+                    <div class="spinner"></div>
+                    <p>Analyzing image...</p>
+                </div>
+                <div class="results" id="resultsContainer">
+                    <div class="result-item">
+                        <h3>Observations</h3>
+                        <p id="observations"></p>
+                    </div>
+                    <div class="result-item">
+                        <h3>Potential Concerns</h3>
+                        <p id="concerns"></p>
+                    </div>
+                    <div class="result-item">
+                        <h3>Recommendations</h3>
+                        <p id="recommendations"></p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Powered by AWS Bedrock & Claude 3 Sonnet</p>
+        </footer>
+    </div>
+    <script src="app.js"></script>
+</body>
+</html> 
